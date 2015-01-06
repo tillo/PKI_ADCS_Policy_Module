@@ -1,0 +1,49 @@
+/*
+ ============================================================================
+ Name        : policy.cpp
+ Author      : Gordon Young
+ Version     : 6.1
+ Copyright   : ©2011 Wells Fargo Bank, n.a.
+ File:       WFBCustPMod.idl
+ Contents:   IDL source for WFBCustPMod
+ Description : Cert Server Policy Module implementation
+ ============================================================================
+ */
+
+import "wtypes.idl";
+import "certpol.idl";
+import "certmod.idl";
+
+
+//+--------------------------------------------------------------------------
+// certpol Type library
+//+--------------------------------------------------------------------------
+
+[
+    uuid(98a77720-c2c8-11d2-b313-00c04f79dc72),
+    version(6.1),
+    helpstring("WFB Custom Cert Policy Module 1.0 Type Library")
+]
+
+library CERTPOLICYSAMPLELib
+{
+    importlib("stdole2.tlb");
+
+    [
+	uuid(98f87410-c2c8-11d2-b313-00c04f79dc72),
+	helpstring("CertPolicySample Class")
+    ]
+    coclass CWFBCustCertPolicy
+    {
+	[default] interface ICertPolicy2;
+    };
+
+    [
+	uuid(98567a30-c2c8-11d2-b313-00c04f79dc72),
+	helpstring("CertManagePolicyModuleSample Class")
+    ]
+    coclass CWFBCustCertManagePolicy
+    {
+	[default] interface ICertManageModule;
+    };
+};
